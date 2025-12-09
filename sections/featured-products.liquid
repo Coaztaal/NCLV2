@@ -1,0 +1,15 @@
+{% assign collection_handle = 'frontpage' %}
+{% assign products = collections[collection_handle].products %}
+
+<section class="featured-products">
+  {% for product in products limit: 4 %}
+    <div class="product-card">
+      <a href="{{ product.url }}">
+        <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" style="width:100%; border-radius: 6px;" />
+      </a>
+      <h3>{{ product.title }}</h3>
+      <p>{{ product.price | money }}</p>
+      <a href="{{ product.url }}" class="cyberpunk-btn">View Product</a>
+    </div>
+  {% endfor %}
+</section>

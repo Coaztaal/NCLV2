@@ -13,7 +13,7 @@
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link type="text/css" href="{{ 'main.css' | asset_url }}" rel="stylesheet">
-    <link type="text/css" href="{{ 'styles.css' | asset_url }}" rel="stylesheet">
+    <link type="text/css" href="{{ 'styles.css' | asset_url }}" rel="stylesheet"> 
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
@@ -31,7 +31,7 @@
 
     {% render 'meta-tags' %}
      {{ content_for_header }}
-    
+    	{{ 'cyberpunk-style.css' | asset_url | stylesheet_tag }}
       {%- liquid
         assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
         assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
@@ -111,6 +111,8 @@
     {% section 'header' %}
      <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
+{% section 'cyberpunk-hero' %}
+{% section 'featured-products' %}
     </main>
     {% section 'footer' %}
 
