@@ -108,7 +108,7 @@
   .product-info__quantity-input {
   outline: 0;
   border-radius: 0;
-  /* border-color: #fff; */
+  /* border-color: #0D0D0D; */
   width:12%;
   }
   .product-info__form{
@@ -132,7 +132,7 @@
   font-size: 16px;
   font-weight: bold;
   line-height: 22px;
-  /* color: #fff; */
+  /* color: #0D0D0D; */
   
   }
   .product-info__size {
@@ -154,7 +154,7 @@
   text-transform:uppercase;
   cursor:pointer;
   /* color: #000; */
-  /* background-color: #fff; */
+  /* background-color: #0D0D0D; */
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -191,7 +191,7 @@
   }
   .cart {
   flex: 1;
-  /* color: #fff; */
+  /* color: #0D0D0D; */
   padding: 0 20px;
   }
   .cart__properties {
@@ -239,11 +239,11 @@
   .cart__item-remove-link {
   font-size: 13px;
   
-  /* color: #fff; */
+  /* color: #0D0D0D; */
   text-decoration: none;
   }
   .cart__item-remove-link:hover {
-  /* color: #fff; */
+  /* color: #0D0D0D; */
   text-decoration: underline;
   }
   .cart__item-final-price, .cart__item-quantity, .cart__item-final-line-price {
@@ -280,7 +280,7 @@
   }
   
   .shipping-link {
-  /* color: #fff; */
+  /* color: #0D0D0D; */
   -webkit-transition: color .15s ease-out;
   -moz-transition: color .15s ease-out;
   -ms-transition: color .15s ease-out;
@@ -324,7 +324,7 @@
   line-height: 1.8em;
   text-transform: uppercase;
   text-decoration: none;
-  /* color: #fff; */
+  /* color: #0D0D0D; */
   padding-left: 0.5vw;
   
   }
@@ -352,7 +352,7 @@
   }
   
   .footer__content-text {
-  /* color: #fff; */
+  /* color: #0D0D0D; */
   font-size: 10.3px;
   }
   .sign{
@@ -366,14 +366,14 @@
   text-rendering: optimizeLegibility;
   margin: 0 0 1em;
   line-height: 1.4;
-  /* color: #fff; */
+  /* color: #0D0D0D; */
   padding-bottom:40px;
   }
   .shopify-policy__body {
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
-  /* color: #fff; */
+  /* color: #0D0D0D; */
   line-height: 1.6;
   }
   
@@ -434,7 +434,7 @@
   margin-bottom: 2vh;
   line-height: 17px;
   font-weight: bold;
-  /* color: #fff; */
+  /* color: #0D0D0D; */
   }
   
   @media(max-width: 1268px) {
