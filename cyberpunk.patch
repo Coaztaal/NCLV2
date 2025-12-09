@@ -1,0 +1,144 @@
+*** Begin Patch
+diff --git a/assets/cyberpunk-style.css b/assets/cyberpunk-style.css
+new file mode 100644
+index 0000000..1111111
+--- /dev/null
++++ b/assets/cyberpunk-style.css
+@@ -0,0 +1,120 @@
++:root {
++  --primary: #00AEEF;
++  --secondary: #2C2E83;
++  --tertiary: #FF007F;
++  --accent: #A66DD8;
++  --highlight: #FF3CAC;
++
++  --bg-dark: #0D0D0D;
++  --bg-light: #1C1B2F;
++
++  --text-primary: #FFFFFF;
++  --text-secondary: #D1C4E9;
++}
++
++body {
++  background-color: var(--bg-dark);
++  color: var(--text-primary);
++  font-family: 'Helvetica Neue', sans-serif;
++}
++
++.cyberpunk-btn {
++  background: var(--primary);
++  color: var(--text-primary);
++  padding: 1rem 2rem;
++  text-transform: uppercase;
++  border: none;
++  border-radius: 6px;
++  cursor: pointer;
++  font-weight: bold;
++  box-shadow: 0 0 10px var(--primary), 0 0 20px var(--tertiary);
++  transition: all 0.3s ease-in-out;
++}
++
++.cyberpunk-btn:hover {
++  background: var(--highlight);
++  box-shadow: 0 0 20px var(--highlight), 0 0 40px var(--accent);
++}
++
++.cyberpunk-hero {
++  background: linear-gradient(135deg, var(--secondary), var(--tertiary));
++  padding: 80px 20px;
++  text-align: center;
++  color: var(--text-primary);
++}
++
++.cyberpunk-hero h1 {
++  font-size: 3rem;
++  margin-bottom: 1rem;
++}
++
++.cyberpunk-hero p {
++  font-size: 1.25rem;
++  color: var(--text-secondary);
++}
++
++.featured-products {
++  display: grid;
++  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
++  gap: 2rem;
++  padding: 60px 20px;
++  background-color: var(--bg-light);
++}
++
++.product-card {
++  background: #141322;
++  padding: 20px;
++  border-radius: 10px;
++  box-shadow: 0 0 10px #ff3cac44;
++  text-align: center;
++  transition: transform 0.3s ease;
++}
++
++.product-card:hover {
++  transform: scale(1.05);
++  box-shadow: 0 0 20px #ff3cac99;
++}
++
++.product-card h3 {
++  color: var(--highlight);
++}
++
++.product-card p {
++  color: var(--text-secondary);
++}
+diff --git a/sections/cyberpunk-hero.liquid b/sections/cyberpunk-hero.liquid
+new file mode 100644
+index 0000000..2222222
+--- /dev/null
++++ b/sections/cyberpunk-hero.liquid
+@@ -0,0 +1,20 @@
++<section class="cyberpunk-hero">
++  <div class="container">
++    <h1>Welcome to NeonHaus</h1>
++    <p>Futuristic Tech for the Home. Delivered Fast.</p>
++    <a href="/collections/all" class="cyberpunk-btn">Shop Now</a>
++  </div>
++</section>
+diff --git a/sections/featured-products.liquid b/sections/featured-products.liquid
+new file mode 100644
+index 0000000..3333333
+--- /dev/null
++++ b/sections/featured-products.liquid
+@@ -0,0 +1,40 @@
++{% assign collection_handle = 'frontpage' %}
++{% assign products = collections[collection_handle].products %}
++
++<section class="featured-products">
++  {% for product in products limit: 4 %}
++    <div class="product-card">
++      <a href="{{ product.url }}">
++        <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" style="width:100%; border-radius: 6px;" />
++      </a>
++      <h3>{{ product.title }}</h3>
++      <p>{{ product.price | money }}</p>
++      <a href="{{ product.url }}" class="cyberpunk-btn">View Product</a>
++    </div>
++  {% endfor %}
++</section>
+diff --git a/layout/theme.liquid b/layout/theme.liquid
+index 4444444..5555555 100644
+--- a/layout/theme.liquid
++++ b/layout/theme.liquid
+@@ -1,6 +1,9 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
++    {{ 'cyberpunk-style.css' | asset_url | stylesheet_tag }}
+     <!-- Existing CSS / meta / other includes -->
+     {{ content_for_header }}
+   </head>
+   <body>
++    {% section 'cyberpunk-hero' %}
++    {% section 'featured-products' %}
+     {{ content_for_layout }}
+   </body>
+ </html>
+*** End Patch
